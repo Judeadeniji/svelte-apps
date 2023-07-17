@@ -1,0 +1,104 @@
+{
+  "title": "Brace Docs",
+  "path": "/",
+  "routes": [
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "GET STARTED"
+    },
+    {
+      "title": "Quick Start",
+      "path": "/learn",
+      "routes": [
+        {
+          "title": "Installation",
+          "path": "/learn/installation"
+        },
+        {
+          "hasSectionHeader": true,
+          "sectionHeader": "LEARN BRACE"
+        }
+      ]
+    },
+    {
+      "title": "Installation",
+      "path": "/learn/installation"
+    },
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "LEARN BRACE"
+    },
+    {
+      "title": "Describing the UI",
+      "path": "/learn/describing-the-ui"
+    },
+    {
+      "title": "Adding Interactivity",
+      "path": "/learn/adding-interactivity"
+    },
+    {
+      "title": "Managing State",
+      "path": "/learn/managing-state"
+    },
+    {
+      "title": "Escape Hatches",
+      "path": "/learn/escape-hatches"
+    },
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "BRACE API"
+    },
+    {
+      "title": "Hooks",
+      "path": "/reference/brace"
+    },
+    {
+      "title": "Components",
+      "path": "/reference/brace/components"
+    },
+    {
+      "title": "APIs",
+      "path": "/reference/brace/apis"
+    },
+    {
+      "title": "Legacy APIs",
+      "path": "/reference/brace/legacy"
+    },
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "BRACE DOM API"
+    },
+    {
+      "title": "Components",
+      "path": "/reference/brace-dom/components"
+    },
+    {
+      "title": "APIs",
+      "path": "/reference/brace-dom"
+    },
+    {
+      "title": "Client APIs",
+      "path": "/reference/brace-dom/client"
+    },
+    {
+      "title": "Server APIs",
+      "path": "/reference/brace-dom/server"
+    },
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "GET INVOLVED"
+    },
+    {
+      "title": "Brace Community",
+      "path": "/community"
+    },
+    {
+      "hasSectionHeader": true,
+      "sectionHeader": "STAY INFORMED"
+    },
+    {
+      "title": "Brace Blog",
+      "path": "/blog"
+    }
+  ]
+}

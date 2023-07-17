@@ -1,0 +1,1 @@
+<h1 class="leading-10 underline inter text-gray-700">Welcome to docs</h1>
