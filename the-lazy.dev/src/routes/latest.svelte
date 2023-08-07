@@ -1,0 +1,39 @@
+<script>
+  import BlogCard from "$lib/components/blog-card.svelte";
+  import BlogCardHero from "$lib/components/blog-card-hero.svelte";
+</script>
+
+<section class="w-full">
+  <div class="flex flex-col md:flex-row items-center justify-between mb-12 w-full">
+    <h2 class="text-3xl font-bold text-left w-full mb-6 md:mb-0">
+      The Latest From Tech
+    </h2>
+    
+    <form class="border rounded-[10px] p-[3px] flex">
+      <input name="newsletter" type="email" class="focus:outline-0 p-1 placeholder-gray-400 font-medium" placeholder="Enter Your Email" />
+      <button class="bg-gray-200 text-gray-500 font-medium px-2 py-1 rounded-[7px] hover:bg-blue-600 hover:text-white transition-all duration-100 active:scale-95">
+        Subscribe
+      </button>
+    </form>
+  </div>
+  
+  <div>
+    <div>
+      <BlogCardHero/>
+    </div>
+    <div class="flex flex-col md:flex-row flex-wrap gap-4">
+      <div class="w-full md:w-1/2">
+        <BlogCard />
+      </div>
+      <div class="w-full md:w-1/2">
+        <BlogCard />
+      </div>
+      <div class="w-full md:w-1/2">
+        <BlogCard />
+      </div>
+      <div class="w-full md:w-1/2">
+        <BlogCard />
+      </div>
+    </div>
+  </div>
+</section>
