@@ -13,7 +13,9 @@
     <span class="text-ellipsis">Test</span>
   </div>
   <!--post title-->
-  <h2 class="text-3xl font-bold text-left mb-4 text-gray-800">My Other Blog Post</h2>
+  <a class="contents" href="/testing">
+    <h2 class="text-2xl font-bold text-left mb-4 text-gray-800">My Other Blog Post</h2>
+  </a>
   
   <!--author-->
   <div class="flex items-center gap-x-2">

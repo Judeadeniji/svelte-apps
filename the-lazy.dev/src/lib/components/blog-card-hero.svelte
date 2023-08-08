@@ -1,5 +1,5 @@
 <article class="w-full mt-16 md:mt-4 flex flex-col gap-y-5">
-  <figure class="w-full rounded-3xl border h-[200px] md:h-[320px]"></figure>
+  <figure class="w-full rounded-3xl border h-[200px] md:h-[24rem]"></figure>
   <div class="flex w-full items-center text-gray-500 font-medium text-[16px] gap-x-3 whitespace-nowrap overflow-hidden text-ellipsis">
     <span>
       August 7, 2023
