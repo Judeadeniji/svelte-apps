@@ -1,10 +1,11 @@
 <script>
   import BlogCard from "$lib/components/blog-card.svelte";
   import BlogCardHero from "$lib/components/blog-card-hero.svelte";
+  import NewsletterCTA from "$lib/components/newsletter-cta.svelte";
 </script>
 
 <section class="w-full">
-  <div class="flex flex-col md:flex-row items-center justify-between mb-12 w-full">
+  <div class="flex flex-col md:flex-row items-center justify-between mb-14 w-full">
     <h2 class="text-3xl font-bold text-left w-full mb-6 md:mb-0">
       The Latest From Tech
     </h2>
@@ -21,17 +22,20 @@
     <div>
       <BlogCardHero/>
     </div>
-    <div class="flex flex-col md:flex-row flex-wrap gap-4">
-      <div class="w-full md:w-1/2">
+    <div class="grid md:gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="w-full">
         <BlogCard />
       </div>
-      <div class="w-full md:w-1/2">
+      <div class="w-full">
         <BlogCard />
       </div>
-      <div class="w-full md:w-1/2">
+      <div class="w-full col-span-full mt-16 md:mt-4">
+        <NewsletterCTA />
+      </div>
+      <div class="w-full">
         <BlogCard />
       </div>
-      <div class="w-full md:w-1/2">
+      <div class="w-full">
         <BlogCard />
       </div>
     </div>
