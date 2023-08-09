@@ -8,7 +8,7 @@
   }
 </script>
 
-<header class="w-full sticky top-0 left-0 right-0 ">
+<header class="w-full sticky top-0 left-0 right-0 z-10">
   <div class="h-[50px] md:h-[60px] flex items-center justify-between px-3 md:px-4 bg-white bg-opacity-80 backdrop-blur-sm">
     <div class="cursor-pointer">
       <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-700">Blog</h1>

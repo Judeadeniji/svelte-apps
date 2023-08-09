@@ -4,9 +4,10 @@
   import '../global.css';
   import Header from "$lib/components/header.svelte";
   import Footer from "$lib/components/footer.svelte";
+  import BttFab from "$lib/components/back-to-top-fab.svelte";
 </script>
 
-<main class="relative h-full w-full max-w-screen-lg mx-auto">
+<main class="relative h-full w-full max-w-screen-lg mx-auto" id="main">
   <div class="border-b flex items-center justify-between text-gray-600 text-md px-2 py-1">
     <h1 class="font-semibold">
       TheLazy.Dev
@@ -19,5 +20,6 @@
   </div>
   <Header />
    <slot />
+   <BttFab selector="#main" />
   <Footer />
 </main>

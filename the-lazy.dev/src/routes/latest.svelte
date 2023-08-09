@@ -3,6 +3,7 @@
   import BlogCardHero from "$lib/components/blog-card-hero.svelte";
   import NewsletterCTA from "$lib/components/newsletter-cta.svelte";
   
+  export let articles = [];
   let email;
 </script>
 
@@ -21,25 +22,19 @@
   </div>
   
   <div>
-    <div>
-      <BlogCardHero/>
-    </div>
+    {#if articles[0]}
+      <div>
+        <BlogCardHero article={articles[0]}/>
+      </div>
+    {/if}
     <div class="grid md:gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="w-full">
-        <BlogCard />
-      </div>
-      <div class="w-full">
-        <BlogCard />
-      </div>
-      <div class="w-full col-span-full mt-16 md:mt-4">
-        <NewsletterCTA />
-      </div>
-      <div class="w-full">
-        <BlogCard />
-      </div>
-      <div class="w-full">
-        <BlogCard />
-      </div>
+      {#if articles.length >= 3}
+        {#each articles.slice(1, articles.length) as article, i}
+          <div class="w-full">
+            <BlogCard {article} />
+          </div>
+        {/each}
+      {/if}
     </div>
   </div>
 </section>
