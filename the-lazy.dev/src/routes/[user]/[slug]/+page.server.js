@@ -9,7 +9,7 @@ let cache = new Map();
 
 setInterval(function() {
    cache = new Map();
-}, 60 * 60 * 60 * 24);
+}, 25 * 60 * 60);
 
 async function getCachedOrFetch(url) {
   if (cache.has(url)) {

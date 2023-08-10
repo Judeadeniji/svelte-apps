@@ -17,7 +17,7 @@
     {/each}
   </div>
   <!--post title-->
-    <a class="contents" href={article.path}>
+    <a data-sveltekit-preload-data="hover" class="contents" href={article.path}>
       <h2 class="text-3xl font-bold text-left mb-4 text-gray-800 overflow-clip text-ellipsis">{article.title}</h2>
   </a>
 

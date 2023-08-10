@@ -6,7 +6,7 @@ const http = new Http();
 
 const addCacheControl = (request, next) => {
   request.header['cache-control'] = 'public, max-age=604800';
-  request.header['age'] = 604800;
+  request.header['age'] = 603000;
   return next(request);
 };
 

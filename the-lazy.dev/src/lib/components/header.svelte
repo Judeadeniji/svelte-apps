@@ -1,10 +1,36 @@
 <script>
+  import { onMount } from "svelte"
+  import { http } from "../utils.js"
   import { fade } from "svelte/transition"
+  import { writable } from "svelte/store"
 
   $: hideMenu = true;
   
+  let tags = [
+    {
+      id: crypto.randomUUID(),
+      name: "JavaScript",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "WebDev",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "Beginner",
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "Developer Talk",
+    },
+  ]
+  
   function toggleMenu() {
     hideMenu = !hideMenu;
+  }
+  
+  function getClasses(bg, text) {
+    return `bg-[${bg}] text-[${text}]`
   }
 </script>
 
@@ -33,9 +59,11 @@
         <div class="w-full col-span-1">
           <h4 class="text-lg text-gray-700 font-bold">Categories</h4>
           <div class="sv">
-            <div class="w-full p-2">Category A</div>
-            <div class="w-full p-2">Category B</div>
-            <div class="w-full p-2">Category C</div>
+            {#each tags as tag (tag.id)}
+            <a name="{tag.name}" href="/categories/{tag.name}">
+              <div class="w-full p-2">{tag.name}</div>
+            </a>
+            {/each}
           </div>
         </div>
         <div class="w-full col-span-1">

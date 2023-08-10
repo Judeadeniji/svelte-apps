@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte"
+  import { error } from "@sveltejs/kit";
   import { fly } from "svelte/transition"
   import Latest from "./latest.svelte"
   import BlogCard from "$lib/components/blog-card.svelte"
@@ -17,6 +18,9 @@
   let canonicalUrl = 'https://the-lazy-dev.vercel.app/';
 
   onMount(() => {
+    setTimeout(() => {
+      throw error(404, "Tell me how")
+    }, 5000)
     canonicalUrl = window.location.hostname
   })
 </script>

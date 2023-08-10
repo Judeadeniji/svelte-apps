@@ -76,16 +76,16 @@
     <img alt={data.article.title} loading="lazy" class="h-full w-full object-cover" src={data.article.cover_image ?? "https://picsum.photos/300/300"} />
   </figure>
   
-  <section class="article-body px-2 open-sans overflow-auto my-4">
+  <section class="article-body px-2 open-sans overflow-auto my-4 whitespace-pre-wrap">
     {@html data.article.body_html}
   </section>
   
   <div class="sticky left-0 right-0 bottom-4 my-4 md:hidden">
     <div class="w-[96%] mx-auto bg-white border h-[50px] backdrop-blur bg-opacity-80 rounded-full flex items-center justify-evenly">
-      <span class="{spanClass}">💖</span>
-      <span class="{spanClass}">💪</span>
-      <span class="{spanClass}">🙅</span>
-      <span class="{spanClass}">🚩</span>
+      <span class="{spanClass} active:animate-ping">💖</span>
+      <span class="{spanClass} active:animate-ping">💪</span>
+      <span class="{spanClass} active:animate-ping">🙅</span>
+      <span class="{spanClass} active:animate-ping">🚩</span>
     </div>
   </div>
   
@@ -128,7 +128,7 @@
         </figure>
         <div class="w-full">
           <span class="text-gray-400 font-medium">{article.tag_list[0]}</span>
-          <a name="{article.title}" href="{article.path}" class="font-bold text-xl w-full my-1 block">{article.title}</a>
+          <a data-sveltekit-preload-data="hover" name="{article.title}" href="{article.path}" class="font-bold text-xl w-full my-1 block">{article.title}</a>
           <p class="text-gray-500 font-normal open-sans text-md">{df.text(new Date(article.published_timestamp))}</p>
         </div>
       </div>
