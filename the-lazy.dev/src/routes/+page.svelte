@@ -14,7 +14,7 @@
   
   const title = 'TheLazyDev - Web Developer Portfolio & Tech Blog';
   const description = 'Explore the world of web development and technology through insightful blog posts and projects by TheLazyDev.';
-  const imageUrl = "/static/banner.png";
+  const imageUrl = "";
   let canonicalUrl = 'https://the-lazy-dev.vercel.app/';
 
   onMount(() => {
