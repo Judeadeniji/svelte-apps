@@ -14,6 +14,7 @@
   
  .article-body, .article-body * {
    all: initial;
+  font-family: "Open Sans";
  }
  
  .article-body h1,
@@ -23,7 +24,6 @@
 .article-body h5,
 .article-body h6 {
   margin-block: 1.5em;
-  font-family: "Open Sans";
 }
 
 .article-body h1 {
