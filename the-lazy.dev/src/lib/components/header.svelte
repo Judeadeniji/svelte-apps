@@ -11,7 +11,9 @@
 <header class="w-full sticky top-0 left-0 right-0 z-10">
   <div class="h-[50px] md:h-[60px] flex items-center justify-between px-3 md:px-4 bg-white bg-opacity-80 backdrop-blur-sm">
     <div class="cursor-pointer">
-      <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-700">Blog</h1>
+      <a name="Home" href="/">
+        <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-700">Blog</h1>
+      </a>
     </div>
     <nav class="hidden md:flex items-center gap-x-3 text-md lg:text-lg font-medium text-gray-500">
       <a href="/categories">Categories</a>
@@ -68,6 +70,6 @@
   }
   
   .sv div:hover {
-    @apply bg-gray-100;
+    @apply bg-blue-50 text-blue-500;
   }
 </style>

@@ -1,14 +1,47 @@
 import { error } from "@sveltejs/kit";
 import { http } from "$lib/utils.js";
 
-export async function load ({ params: { user, slug } }) {
+/**
+ * Trust me, we know what we are doing in this file
+ */
+
+let cache = new Map();
+
+setInterval(function() {
+   cache = new Map();
+}, 60 * 60 * 60 * 24);
+
+async function getCachedOrFetch(url) {
+  if (cache.has(url)) {
+    return cache.get(url);
+  } else {
+    const response = await http.get(url);
+    const jsonResponse = await response.json();
+    cache.set(url, jsonResponse);
+    return jsonResponse;
+  }
+}
+
+async function getArticle(user, slug) {
+  const url = `https://dev.to/api/articles/${user}/${slug}`;
+  return await getCachedOrFetch(url);
+}
+
+async function getRelatedArticles(tags) {
+  const url = `https://dev.to/api/articles/search?q=${tags}`;
+  return await getCachedOrFetch(url);
+}
+
+export async function load({ params: { user, slug } }) {
   try {
-    const response = await http.get(`https://dev.to/api/articles/${user}/${slug}`);
-    
-    return await response.json();
+    const article = await getArticle(user, slug);
+    return {
+      article,
+      related: await getRelatedArticles(article.tags),
+    };
   } catch (e) {
     throw error(404, {
-      message: 'Page Not Found'
+      message: e.message,
     });
   }
 }

@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte"
   import { fly } from "svelte/transition"
   import Latest from "./latest.svelte"
   import BlogCard from "$lib/components/blog-card.svelte"
@@ -9,7 +10,37 @@
     my_articles: [],
     others: [],
   };
+  
+  const title = 'TheLazyDev - Web Developer Portfolio & Tech Blog';
+  const description = 'Explore the world of web development and technology through insightful blog posts and projects by TheLazyDev.';
+  const imageUrl = "/static/banner.png";
+  let canonicalUrl = 'https://the-lazy-dev.vercel.app/';
+
+  onMount(() => {
+    canonicalUrl = window.location.hostname
+  })
 </script>
+
+<head>
+  <title>{title}</title>
+  <meta name="description" content="{description}" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{title}" />
+  <meta property="og:description" content="{description}" />
+  <meta property="og:image" content="{imageUrl}" />
+  <meta property="og:url" content="{canonicalUrl}" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{title}" />
+  <meta name="twitter:description" content="{description}" />
+  <meta name="twitter:image" content="{imageUrl}" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{canonicalUrl}" />
+</head>
 
 <section class="w-full mt-10 px-4 md:px-8 overflow-x-hidden" in:fly={{ x: -400 }} out:fly={{ x: -400 }}>
   <Latest articles={data.my_articles.slice(0,5)} />

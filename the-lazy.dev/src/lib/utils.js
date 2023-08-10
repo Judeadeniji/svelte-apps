@@ -2,9 +2,19 @@ import { Http, Core } from "utiliti-js";
 
 const { DateFilter } = Core;
 
-export const http = new Http({
-  retryDelay: 1000,
-  retryAttempt: 5
-});
+const http = new Http();
 
-export const df = new DateFilter();
+const addCacheControl = (request, next) => {
+  request.header['cache-control'] = 'public, max-age=604800';
+  request.header['age'] = 604800;
+  return next(request);
+};
+
+http.addInterceptor(addCacheControl);
+
+const df = new DateFilter();
+
+export {
+  http,
+  df
+};
