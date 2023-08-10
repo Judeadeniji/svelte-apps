@@ -49,7 +49,7 @@
     <img alt={data.title} loading="lazy" class="h-full w-full object-cover" src={data.cover_image ?? "https://picsum.photos/300/300"} />
   </figure>
   
-  <section class="article-body open-sans text-[1.2rem] text-left md:max-w-screen-md mx-auto py-3 px-1">
+  <section class="article-body px-2 open-sans overflow-auto my-4">
     {@html data.body_html}
   </section>
   
@@ -125,84 +125,3 @@
     </div>
   </section>
 </article>
-
-<style>
-.article-body h1,
-.article-body h2,
-.article-body h3,
-.article-body h4,
-.article-body h5,
-.article-body h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  font-weight: 900 !important;
-}
-
-.article-body p {
-  margin: 1em 0;
-}
-
-.article-body pre {
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-radius: 4px;
-  overflow: scroll;
-  font-size: 14px;
-}
-
-.article-body code {
-  font-family: 'Courier New', monospace;
-  background-color: #f4f4f4;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.article-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1em;
-  border: 1pxà solid #ccc;
-}
-
-.article-body th,
-.article-body td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ccc;
-}
-
-.article-body a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.article-body a:hover {
-  text-decoration: underline;
-}
-
-.article-body img, a > img {
-  max-width: 100%;
-  height: auto;
-  margin: 1em 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.article-body img, a > img {
-  @apply rounded-xl;
-}
-
-/* Additional styles for different types of media files */
-.article-body .video {
-  max-width: 100%;
-  height: auto;
-  margin: 1em 0;
-}
-
-.article-body .audio {
-  max-width: 100%;
-  margin: 1em 0;
-}
-
-</style>
