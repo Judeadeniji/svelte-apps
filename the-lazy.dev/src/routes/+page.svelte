@@ -56,7 +56,9 @@
           <BlogCard {article} />
         </div>
       {/each}
+      {#if data.my_articles.length >= 30}
       <Pagination />
+      {/if}
     </div>
   </section>
   <section class="w-full mt-4 pb-4">
@@ -67,6 +69,9 @@
           <BlogCard {article} />
         </div>
       {/each}
+      {#if data.my_articles.length >= 30}
+      <Pagination />
+      {/if}
     </div>
   </section>
   
