@@ -4,10 +4,12 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 const config = {
   kit: {
     adapter: adapter(),
-    handleHttpError: ({ path, referrer, message }) => {
-      if (path.includes('static')) return;
-      
-      throw new Error(message);
+    prerender: {
+      handleHttpError: ({ path, referrer, message }) => {
+        if (path.includes('static')) return;
+        
+        throw new Error(message);
+      }
     }
   },
   preprocess: vitePreprocess()
