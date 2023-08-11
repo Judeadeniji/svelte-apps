@@ -35,8 +35,8 @@
   <link rel="canonical" href="{canonicalUrl}" />
 </head>
 
-<article class="px-3 md:px-6 lg:px-4 pt-8 relative">
-  <div class="md:max-w-screen-md">
+<article class="md:max-w-screen-md px-3 md:px-6 lg:px-4 pt-8 relative mx-auto">
+  <div class="mx-auto">
     <div class="flex w-full items-center justify-evenly text-gray-600 font-semibold text-[14px] whitespace-nowrap overflow-hidden text-ellipsis open-sans my-6 md:justify-around">
     <!--Categories-->
     {#each data.article.tags as tag, i}
@@ -47,7 +47,7 @@
     {/each}
   </div>
   
-    <h1 class="font-bold text-5xl md:text-6xl leading-tight md:leading-[4.4rem]">{data.article.title}</h1>
+    <h1 class="font-bold text-5xl leading-tight md:leading-[4.4rem]">{data.article.title}</h1>
   </div>
   
   <div class="flex flex-col md:flex-row-reverse md:justify-between gap-y-5 my-8 pl-3">
@@ -72,11 +72,11 @@
     </div>
   </div>
   
-  <figure class="my-12 h-[200px] md:h-[300px] rounded-2xl overflow-hidden rounded-2xl">
+  <figure class="my-12 h-[200px] md:h-96 rounded-2xl overflow-hidden rounded-2xl">
     <img alt={data.article.title} loading="lazy" class="h-full w-full object-cover" src={data.article.cover_image ?? "https://picsum.photos/300/300/?id="+data.article.id} />
   </figure>
   
-  <section class="prose px-2 my-4 overflow-ellipsis">
+  <section class="prose md:prose-md px-2 md:px-1 my-4 overflow-ellipsis mx-auto w-full">
     {@html data.article.body_html}
   </section>
   

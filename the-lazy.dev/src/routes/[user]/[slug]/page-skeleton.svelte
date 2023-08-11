@@ -36,32 +36,7 @@
   <figure class="my-12 h-[200px] md:h-[300px] rounded-2xl bg-gray-500 animate-pulse">
   </figure>
   
-  <section class="px-2 open-sans w-full my-4">
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-    <p class="h-5 w-full bg-gray-500 animate-pulse rounded-md my-4"></p>
-  </section>
+
   
   <div class="sticky left-0 right-0 bottom-4 my-4 md:hidden animate-pulse">
     <div class="w-[96%] mx-auto bg-white border h-[50px] backdrop-blur bg-opacity-80 rounded-full flex items-center justify-evenly">
