@@ -1,3 +1,3 @@
 <div>
-  Category
+  Coming Soon...
 </div>

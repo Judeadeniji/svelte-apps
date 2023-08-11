@@ -73,10 +73,10 @@
   </div>
   
   <figure class="my-12 h-[200px] md:h-[300px] rounded-2xl overflow-hidden rounded-2xl">
-    <img alt={data.article.title} loading="lazy" class="h-full w-full object-cover" src={data.article.cover_image ?? "https://picsum.photos/300/300"} />
+    <img alt={data.article.title} loading="lazy" class="h-full w-full object-cover" src={data.article.cover_image ?? "https://picsum.photos/300/300/?id="+data.article.id} />
   </figure>
   
-  <section class="article-body px-2 open-sans overflow-auto my-4 whitespace-pre-wrap">
+  <section class="prose px-2 my-4 overflow-ellipsis">
     {@html data.article.body_html}
   </section>
   
@@ -107,7 +107,7 @@
           <img alt="{data.article.user.username}" loading="lazy" class="h-full w-full object-cover" src="{data.article.user.profile_image_90}" />
         </figure>
         <div class="flex flex-col gap-y-1 items-start">
-          <h2 class="font-bold text-md text-black leading-none">{data.article.user.name}</h2>
+          <a href="{data.article.user.username}" name="{data.article.user.name}" class="font-bold text-md text-black leading-none block">{data.article.user.name}</a>
             <p class="text-sm font-normal text-gray-600 leading-none text-left">Posted on {df.text(new Date(data.article.published_timestamp))}</p>
         </div>
       </div>
@@ -120,12 +120,14 @@
     <h2 class="text-2xl font-bold">Related</h2>
   {#await data.related}
    {:then articles}
-    <div class="flex flex-col items-center gap-y-4 mt-4">
+    <div class="flex flex-col items-center gap-y-4 mt-4 justify-center md:justify-items-start">
       {#each articles.slice(0,5) as article (article.id)}
       <div class="flex flex-col md:flex-row gap-x-4 gap-y-3 flex-nowrap w-full">
-        <figure class="shadow w-[200px] rounded-lg h-28 overflow-scroll">
-          <img loading="lazy" class="h-full w-full object-cover" src="{article.cover_image ?? 'https://picsum.photos/300/300'}"/>
-        </figure>
+          <a data-sveltekit-preload-data="hover" name="{article.title}" href="{article.path}" class="contents">
+              <figure class="shadow w-[200px] rounded-lg h-28 overflow-scroll">
+                <img alt="{article.title}" loading="lazy" class="h-full w-full object-cover" src="{article.cover_image ?? 'https://picsum.photos/300/300'}"/>
+              </figure>
+          </a>
         <div class="w-full">
           <span class="text-gray-400 font-medium">{article.tag_list[0]}</span>
           <a data-sveltekit-preload-data="hover" name="{article.title}" href="{article.path}" class="font-bold text-xl w-full my-1 block">{article.title}</a>
@@ -137,3 +139,9 @@
   {/await}
   </section>
 </article>
+
+<style>
+  :global(.prose a)  {
+    white-space: pre-wrap;
+  }
+</style>

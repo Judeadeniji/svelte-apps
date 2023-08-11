@@ -6,7 +6,6 @@
   import BlogCard from "$lib/components/blog-card.svelte"
   import NewsletterCTA from "$lib/components/newsletter-cta.svelte"
   import NewsletterCTA2 from "$lib/components/newsletter-cta-2.svelte"
-  import Pagination from "$lib/components/pagination.svelte"
   export let data = {
     my_articles: [],
     others: [],
@@ -18,9 +17,6 @@
   let canonicalUrl = 'https://the-lazy-dev.vercel.app/';
 
   onMount(() => {
-    setTimeout(() => {
-      throw error(404, "Tell me how")
-    }, 5000)
     canonicalUrl = window.location.hostname
   })
 </script>
@@ -57,7 +53,9 @@
         </div>
       {/each}
       {#if data.my_articles.length >= 30}
-      <Pagination />
+        <div class="w-full my-6 border-y py-3 col-span-full">
+          <a href="/all" class="font-bold text-center text-gray-500 block">Read More →</a>
+        </div>
       {/if}
     </div>
   </section>
@@ -69,8 +67,10 @@
           <BlogCard {article} />
         </div>
       {/each}
-      {#if data.my_articles.length >= 30}
-      <Pagination />
+      {#if data.others.length >= 30}
+        <div class="w-full my-6 border-y py-3 col-span-full">
+          <a href="/articles/?page=1" class="font-bold text-center text-gray-500 block">Read More →</a>
+        </div>
       {/if}
     </div>
   </section>

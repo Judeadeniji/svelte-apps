@@ -27,3 +27,9 @@
    <BttFab selector="#main" />
   <Footer />
 </main>
+
+<style>
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+</style>

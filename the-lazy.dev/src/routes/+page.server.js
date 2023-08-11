@@ -1,5 +1,4 @@
 import { http } from "$lib/utils.js";
-import { DEVTO_KEY } from "$env/static/private";
 
 let data;
 
@@ -34,7 +33,11 @@ async function getMyArticles() {
 
 async function getLatestArticles() {
   try {
-    const request = await http.get("https://dev.to/api/articles/latest");
+    const request = await http.get("https://dev.to/api/articles/latest", {
+      params: {
+        page: 1
+      }
+    });
     return await request.json();
   } catch (e) {
     return [];

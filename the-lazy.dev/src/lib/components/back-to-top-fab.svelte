@@ -23,8 +23,11 @@
     
     // 25% or 1/4 of the pages'height
     const thresholdPixels = 0.25 * documentHeight;
-  
-    if (remainingDistance <= thresholdPixels) {
+
+    // 50% or 1/2 of the pages'height
+    const topThreshold = 0.50 * documentHeight;
+
+    if (scrollY >= topThreshold || remainingDistance <= thresholdPixels) {
       display = true;
     } else {
       display = false;

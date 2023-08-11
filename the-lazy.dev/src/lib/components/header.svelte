@@ -67,11 +67,17 @@
           </div>
         </div>
         <div class="w-full col-span-1">
-          <h4 class="text-lg text-gray-700 font-bold">Links</h4>
+          <h4 class="text-lg text-gray-700 font-bold">Socials</h4>
           <div class="sv">
-            <div class="w-full p-2">Some Link</div>
-            <div class="w-full p-2">Another Link</div>
-            <div class="w-full p-2">Link 3</div>
+            <a name="TheLazyDev" href="https:x.com/TheLazyDev">
+              <div class="w-full p-2">X (fka Twitter)</div>
+            </a>
+            <a name="Adeniji Oluwaferanmi" href="https://www.linkedin.com/in/oluwaferanmi-adeniji-537416252">
+              <div class="w-full p-2">LinkedIn</div>
+            </a>
+            <a name="Judeadeniji" href="https:github.com/Judeadeniji">
+              <div class="w-full p-2">GitHub</div>
+            </a>
           </div>
         </div>
       </div>
