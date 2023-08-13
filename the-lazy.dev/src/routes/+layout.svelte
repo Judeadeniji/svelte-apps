@@ -1,5 +1,4 @@
 <script>
-  import { partytownSnippet } from '@builder.io/partytown/integration'
   import { navigating } from "$app/stores"
   import Loader from "./page-skeleton.svelte"
   import "@fontsource/open-sans/latin.css";
@@ -12,19 +11,9 @@
 </script>
 
 <svelte:head>
-  <script>
-    // Forward the necessary functions to the web worker layer
-    partytown = {
-      forward: ['dataLayer.push']
-    }
-  </script>
-
-  {@html '<script>' + partytownSnippet() + '</script>'}
-  
-  
     <!-- Google tag (gtag.js) Vercel -->
-    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-KJSJEETYVD"></script>
-    <script type="text/partytown">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJSJEETYVD"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -32,8 +21,8 @@
       gtag('config', 'G-KJSJEETYVD');
     </script>
     <!-- Google tag (gtag.js) Netlify-->
-    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-G1KTDD4FQF"></script>
-    <script type="text/partytown">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1KTDD4FQF"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
