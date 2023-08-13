@@ -7,7 +7,7 @@
   </h1>
   
   <form class="border p-[3px] inline-flex rounded-[10px] h-[50px] mt-4 md:mt-6 items-center mx-auto bg-white">
-    <input placeholder="you@email.com" name="newsletter" type="email" class="placeholder-gray-500 focus:outline-0 text-md p-1 font-medium text-gray-600" autocomplete="email" />
-    <button class="whitespace-nowrap bg-blue-600 text-white text-md rounded-[7px] px-2 h-full">Notify Me</button>
+    <input placeholder="you@email.com" title="newsletter" type="email" class="placeholder-gray-500 focus:outline-0 text-md p-1 font-medium text-gray-600" autocomplete="email" />
+    <button title="Notify me" class="whitespace-nowrap bg-blue-600 text-white text-md rounded-[7px] px-2 h-full">Notify Me</button>
   </form>
 </section>

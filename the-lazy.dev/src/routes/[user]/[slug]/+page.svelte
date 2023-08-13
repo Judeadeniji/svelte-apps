@@ -40,7 +40,7 @@
     <div class="flex w-full items-center justify-evenly text-gray-600 font-semibold text-[14px] whitespace-nowrap overflow-hidden text-ellipsis open-sans my-6 md:justify-around">
     <!--Categories-->
     {#each data.article.tags as tag, i}
-      <span class="text-ellipsis">{tag}</span>
+      <a name="{tag}" href="/categories/{tag}" class="text-ellipsis">{tag}</a>
       {#if i + 1 !== data.article.tags.length}
       |
       {/if}
@@ -107,7 +107,7 @@
           <img alt="{data.article.user.username}" loading="lazy" class="h-full w-full object-cover" src="{data.article.user.profile_image_90}" />
         </figure>
         <div class="flex flex-col gap-y-1 items-start">
-          <a href="{data.article.user.username}" name="{data.article.user.name}" class="font-bold text-md text-black leading-none block">{data.article.user.name}</a>
+          <a href="/{data.article.user.username}" name="{data.article.user.name}" class="font-bold text-md text-black leading-none block">{data.article.user.name}</a>
             <p class="text-sm font-normal text-gray-600 leading-none text-left">Posted on {df.text(new Date(data.article.published_timestamp))}</p>
         </div>
       </div>
@@ -117,9 +117,10 @@
   </div>
   
   <section class="my-12 md:my-20">
-    <h2 class="text-2xl font-bold">Related</h2>
   {#await data.related}
+    <p class="font-bold text-xl">Loading...</p>
    {:then articles}
+    <h2 class="text-2xl font-bold">Related</h2>
     <div class="flex flex-col items-center gap-y-4 mt-4 justify-center md:justify-items-start">
       {#each articles.slice(0,5) as article (article.id)}
       <div class="flex flex-col md:flex-row gap-x-4 gap-y-3 flex-nowrap w-full">
@@ -143,5 +144,10 @@
 <style>
   :global(.prose a)  {
     white-space: pre-wrap;
+    color: #52a7eb;
+  }
+  
+  :global(.prose img) {
+    @apply rounded-xl w-full h-auto touch-none;
   }
 </style>

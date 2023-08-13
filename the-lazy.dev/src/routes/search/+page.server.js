@@ -1,10 +1,6 @@
 import { error } from "@sveltejs/kit";
 import { http } from "$lib/utils.js";
 
-/**
- * Trust me, we know what we are doing in this file
- */
-
 let cache = new Map();
 
 setInterval(function() {
@@ -22,22 +18,19 @@ async function getCachedOrFetch(url) {
   }
 }
 
-async function getArticle(user, slug) {
-  const url = `https://dev.to/api/articles/${user}/${slug}`;
+async function getSearchResults(query, page) {
+  const url = `https://dev.to/api/articles/search?q=${encodeURIComponent(query)}&page=${page}`;
   return await getCachedOrFetch(url);
 }
 
-async function getRelatedArticles(tags) {
-  const url = `https://dev.to/api/articles/search?q=${tags}`;
-  return await getCachedOrFetch(url);
-}
-
-export async function load({ params: { user, slug } }) {
+export function load({ url }) {
   try {
-    const article = await getArticle(user, slug);
+    const query = url.searchParams.get('q');
+    const page = Number(url.searchParams.get('page') || 1);
     return {
-      article,
-      related: getRelatedArticles(article.tags),
+      articles: getSearchResults(query, page),
+      query,
+      page,
     };
   } catch (e) {
     throw error(404, {

@@ -1,4 +1,6 @@
 <script>
+  import { navigating } from "$app/stores"
+  import Loader from "./page-skeleton.svelte"
   import "@fontsource/open-sans";
   import "@fontsource/roboto";
   import '../global.css';
@@ -7,6 +9,8 @@
   import BttFab from "$lib/components/back-to-top-fab.svelte";
 
 </script>
+
+
 
 <main class="relative h-full w-full max-w-screen-lg mx-auto" id="main">
   <div class="border-b flex items-center justify-between text-gray-600 text-md px-2 py-1">
@@ -23,8 +27,12 @@
     </div>
   </div>
   <Header />
-   <slot />
-   <BttFab selector="#main" />
+  {#if $navigating}
+    <Loader />
+  {:else}
+     <slot />
+     <BttFab selector="#main" />
+  {/if}
   <Footer />
 </main>
 

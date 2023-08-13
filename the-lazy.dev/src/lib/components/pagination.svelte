@@ -21,7 +21,7 @@
     {/if}
     
     {#each getPageNumbers() as number (number)}
-      <a animation:flip={{ duration: 250 }} href="{path}/?page={number}" class={`h-10 w-10 ${number === idx ? "bg-blue-600 text-white" : "border hover:bg-gray-100 hover:bg-gray-200"} rounded-full flex items-center justify-center`}>{number}</a>
+      <a animation:flip={{ duration: 250 }} href="{path}&page={number}" class={`h-10 w-10 ${number === idx ? "bg-blue-600 text-white" : "border hover:bg-gray-100 hover:bg-gray-200"} rounded-full flex items-center justify-center`}>{number}</a>
     {/each}
     
     {#if idx + 3 < total.length}
@@ -29,10 +29,10 @@
     {/if}
     
   {#if idx < 15}
-    <a transition:fly={{ duration: 250 }} href="{path}/?page={total.length}" class={`h-10 w-10 ${total.length === idx ? "bg-blue-600 text-white" : "border hover:bg-gray-100 hover:bg-gray-200"} rounded-full flex items-center justify-center`}>{total.length}</a>
+    <a transition:fly={{ duration: 250 }} href="{path}&page={total.length}" class={`h-10 w-10 ${total.length === idx ? "bg-blue-600 text-white" : "border hover:bg-gray-100 hover:bg-gray-200"} rounded-full flex items-center justify-center`}>{total.length}</a>
     {/if}
   {#if idx < 16}
-    <a href="{path}/?page={idx + 1}" transition:fly={{ duration: 250 }} class="h-10 w-10 hover:bg-gray-200 rounded-full flex items-center justify-center">⟩</a>
+    <a href="{path}&page={idx + 1}" transition:fly={{ duration: 250 }} class="h-10 w-10 hover:bg-gray-200 rounded-full flex items-center justify-center">⟩</a>
     {/if}
   </div>
 </div>

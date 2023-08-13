@@ -13,7 +13,7 @@
   <div class="flex w-full items-center justify-evenly text-gray-600 font-semibold text-[14px] whitespace-nowrap overflow-hidden text-ellipsis open-sans my-6 md:justify-around">
     <!--Categories-->
     {#each article.tag_list as tag, i}
-      <a name="{tag}" href="/categories/{tag}" class="text-ellipsis">{tag}</a>
+      <a title="{tag}" href="/categories/{tag}" class="text-ellipsis">{tag}</a>
       {#if i + 1 !== article.tag_list.length}
       |
       {/if}
@@ -31,7 +31,7 @@
       <img alt={article.user.username} loading="lazy" class="h-full w-full object-cover" src={article.user.profile_image_90} />
     </figure>
     <div class="flex flex-col gap-y-1 items-start">
-      <a href="{article.user.username}" name="{article.user.name}" class="font-bold text-md text-black leading-none block">{article.user.name}</a>
+      <a href="{article.user.username}" title="{article.user.name}" class="font-bold text-md text-black leading-none block">{article.user.name}</a>
       <p class="text-sm font-normal text-gray-600 leading-none text-left">Posted on {df.text(new Date(article.published_timestamp))}</p>
     </div>
   </div>

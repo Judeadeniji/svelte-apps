@@ -46,5 +46,5 @@
 </script>
 
 {#if display}
-  <button in:fly={{ y: -100, duration: 250 }} out:fly={{ y: 100 }} on:click={scrollTo} class="h-16 w-16 rounded-full bg-blue-600 fixed bottom-3 right-3 drop-shadow-md font-extrabold text-white text-2xl" bind:this={btn}>↑</button>
+  <button title="Back to Top" in:fly={{ y: -100, duration: 250 }} out:fly={{ y: 100 }} on:click={scrollTo} class="h-16 w-16 rounded-full bg-blue-600 fixed bottom-3 right-3 drop-shadow-md font-extrabold text-white text-2xl" bind:this={btn}>↑</button>
 {/if}

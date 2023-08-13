@@ -52,7 +52,7 @@
         </div>
       {/each}
       {#if data.articles.flat().length >= 30}
-        <Pagination path="/articles" idx={data.page} />
+        <Pagination path="/articles/?" idx={data.page} />
       {/if}
     </div>
   </section>

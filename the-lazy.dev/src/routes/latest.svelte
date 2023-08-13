@@ -15,7 +15,7 @@
     
     <form class="border rounded-[10px] p-[3px] flex">
       <input name="newsletter" type="email" class="focus:outline-0 p-1 md:p-2 placeholder-gray-400 font-semibold text-gray-600 open-sans" placeholder="Enter Your Email" spellcheck="false" autocomplete="email" bind:value={email} />
-      <button class="bg-gray-200 text-gray-400 font-semibold px-2 py-1 md:py-2 md:px-3 rounded-[7px] hover:bg-blue-600 hover:text-white transition-all duration-100 active:scale-95">
+      <button class="bg-gray-200 text-gray-600 font-semibold px-2 py-1 md:py-2 md:px-3 rounded-[7px] hover:bg-blue-600 hover:text-white transition-all duration-100 active:scale-95">
         Subscribe
       </button>
     </form>
