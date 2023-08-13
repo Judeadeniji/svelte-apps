@@ -13,7 +13,7 @@
   <div class="flex w-full items-center justify-evenly text-gray-600 font-semibold text-[14px] whitespace-nowrap overflow-hidden text-ellipsis open-sans my-6 md:justify-around">
     <!--Categories-->
     {#each article.tag_list as tag, i}
-      <a title="{tag}" href="/categories/{tag}" class="text-ellipsis">{tag}</a>
+      <a title="{tag}" href="/categories/{tag}" class="text-ellipsis">{tag.toLowerCase() === "go" ? "Golang" : tag}</a>
       {#if i + 1 !== article.tag_list.length}
       |
       {/if}
