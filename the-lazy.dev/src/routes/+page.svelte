@@ -16,7 +16,7 @@
   let canonicalUrl = 'https://the-lazy-dev.vercel.app/';
 </script>
 
-<head>
+<svelte:head>
   <title>{title}</title>
   <meta name="description" content="{description}" />
 
@@ -35,7 +35,7 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{canonicalUrl}" />
-</head>
+</svelte:head>
 
 <section class="w-full mt-10 px-4 md:px-8 overflow-x-hidden" in:fly={{ x: -400 }} out:fly={{ x: -400 }}>
   <Latest articles={data.my_articles.slice(0,5)} />

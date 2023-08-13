@@ -1,8 +1,8 @@
 <script>
   import { navigating } from "$app/stores"
   import Loader from "./page-skeleton.svelte"
-  import "@fontsource/open-sans";
-  import "@fontsource/roboto";
+  import "@fontsource/open-sans/latin.css";
+  import "@fontsource/roboto/latin.css";
   import '../global.css';
   import Header from "$lib/components/header.svelte";
   import Footer from "$lib/components/footer.svelte";

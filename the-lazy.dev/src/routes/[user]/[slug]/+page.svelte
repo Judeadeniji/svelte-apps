@@ -19,7 +19,7 @@
   
 </script>
 
-<head>
+<svelte:head>
   <title>{data.article.title} - TheLazy.Dev</title>
   <meta name="description" content={data.article.description} />
   <meta name="keywords" content="TheLazyDev, Oluwaferanmi, Jude, {data.article.tags.join(",")}" />
@@ -33,7 +33,7 @@
   
     <!-- Canonical URL -->
   <link rel="canonical" href="{canonicalUrl}" />
-</head>
+</svelte:head>
 
 <article class="md:max-w-screen-md px-3 md:px-6 lg:px-4 pt-8 relative mx-auto">
   <div class="mx-auto">
@@ -47,7 +47,7 @@
     {/each}
   </div>
   
-    <h1 class="font-bold text-5xl leading-tight md:leading-[4.4rem]">{data.article.title}</h1>
+    <h1 class="font-bold text-3xl leading-tight md:leading-[4.4rem]">{data.article.title}</h1>
   </div>
   
   <div class="flex flex-col md:flex-row-reverse md:justify-between gap-y-5 my-8 pl-3">
