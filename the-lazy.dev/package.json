@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@builder.io/partytown": "^0.8.0",
 		"@fontsource/open-sans": "^5.0.8",
 		"@fontsource/roboto": "^5.0.8",
 		"utiliti-js": "^2.0.337"

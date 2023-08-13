@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte"
   import { error } from "@sveltejs/kit";
   import { fly } from "svelte/transition"
   import Latest from "./latest.svelte"
@@ -14,6 +15,12 @@
   const description = 'Explore the world of web development and technology through insightful blog posts and projects by TheLazyDev.';
   const imageUrl = "";
   let canonicalUrl = 'https://the-lazy-dev.vercel.app/';
+  
+  onMount(() => {
+    if (window.location.hostname.includes('netlify')) {
+      canonicalUrl = 'https://the-lazy-dev.netlify.app/';
+    }
+  })
 </script>
 
 <svelte:head>
