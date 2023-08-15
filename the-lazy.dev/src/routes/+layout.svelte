@@ -20,15 +20,6 @@
     
       gtag('config', 'G-KJSJEETYVD');
     </script>
-    <!-- Google tag (gtag.js) Netlify-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1KTDD4FQF"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-G1KTDD4FQF');
-    </script>
 </svelte:head>
 
 <main class="relative h-full w-full max-w-screen-lg mx-auto" id="main">
