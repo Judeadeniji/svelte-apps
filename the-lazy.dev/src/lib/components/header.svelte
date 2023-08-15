@@ -1,13 +1,11 @@
 <script>
   import { onMount } from "svelte"
-  import { goto } from "$app/navigation"
-  import { http } from "../utils.js"
   import { fade, fly } from "svelte/transition"
   import SearchIcon from "../svg/search.svelte"
+  import Search from "./search.svelte"
 
   $: hideMenu = true;
   $: hideSearch = true;
-  let searchValue = '';
   
   let tags = [
     {
@@ -37,12 +35,6 @@
   
   function getClasses(bg, text) {
     return `bg-[${bg}] text-[${text}]`
-  }
-  
-  function performSearch({ target }) {
-    goto(`/search/?q=${searchValue}`);
-    searchValue = ""
-    toggleSearch()
   }
   
  function clickOutside(node) {
@@ -91,19 +83,12 @@
   
   <!--search-->
   {#if !hideSearch}
-    <div transition:fade={{ duration: 250 }} class="absolute h-screen w-screen z-10 top-0 right-0 left-0 bottom-0 bg-black bg-opacity-30 backdrop-blur-sm touch-none">
-      <form on:submit|preventDefault={performSearch} transition:fly={{ y: 100, duration: 200 }} on:click_outside={toggleSearch} use:clickOutside class="w-full p-2 flex items-center gap-x-2">
-        <input bind:value={searchValue} class="w-80 h-10 rounded-full p-2 focus:outline-0 text-gray-700" type="search" title="search" placeholder="Search..."/>
-        <button title="search" class="h-10 w-10 p-2 rounded-full bg-white border">
-          <SearchIcon />
-        </button>
-      </form>
-    </div>
+    <Search {toggleSearch} {clickOutside} />
   {/if}
   <!--search/-->
   
   {#if !hideMenu}
-  <div class="h-screen touch-none">
+  <div class="h-screen absolute left-0 right-0 top-0 bottom-0 bg-black bg-opacity-10 touch-none">
     <div on:click_outside={toggleMenu} use:clickOutside transition:fade={{ duration: 150 }} class="bg-white shadow p-3 rounded-lg mt-3 w-[95%] mx-auto absolute left-0 right-0 border open-sans">
       <div class="grid grid-cols-2 gap-x-2">
         <div class="w-full col-span-1">

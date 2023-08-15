@@ -142,12 +142,16 @@
 </article>
 
 <style>
+  :global(.prose)  {
+    @apply overflow-hidden;
+  }
+  
   :global(.prose a)  {
     white-space: pre-wrap;
     color: #52a7eb;
   }
   
   :global(.prose img) {
-    @apply rounded-xl w-full h-auto touch-none;
+    @apply rounded-xl w-full h-auto touch-manipulation;
   }
 </style>

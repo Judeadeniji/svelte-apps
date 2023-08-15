@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte"
+  import { goto } from "$app/navigation"
   import { error } from "@sveltejs/kit";
   import { fly } from "svelte/transition"
   import { df } from "$lib/utils.js";
@@ -7,6 +8,7 @@
   import Pagination from "$lib/components/pagination.svelte"
   import NewsletterCTA2 from "$lib/components/newsletter-cta-2.svelte"
   export let data;
+  let searchValue = data.query;
   
   const title = `Search results for ${data.query} | TheLazyDev`;
   const description = 'Explore the world of web development and technology through insightful blog posts and projects by TheLazyDev.';
@@ -18,6 +20,15 @@
   onMount(() => {
     canonicalUrl = window.location.hostname;
   })
+  
+  const performSearch = async () => {
+    try {
+      const query = searchValue;
+      await goto(`/search/?q=${encodeURIComponent(query)}&page=1`);
+    } catch (e) {
+      
+    }
+  }
 </script>
 
 <svelte:head>
@@ -43,6 +54,21 @@
 </svelte:head>
 
 <section class="w-full mt-10 px-4 md:px-8 overflow-x-hidden" in:fly={{ x: -400 }} out:fly={{ x: -400 }}>
+  
+  <div class="flex flex-col md:flex-row items-center justify-between mb-14 w-full">
+    <h2 class="text-3xl font-bold text-left w-full mb-6 md:mb-0">
+      Search
+    </h2>
+    
+    <form class="relative border w-full md:w-auto rounded-[10px] p-[3px] flex" on:submit|preventDefault={performSearch}>
+      <input name="search" type="search" class="focus:outline-0 p-1 md:p-2 placeholder-gray-400 font-semibold text-gray-600 open-sans w-full" placeholder="Search" spellcheck="false" bind:value={searchValue} />
+      <button class="absolute right-[3px] top-[3px] bottom-[3px] px-2 py-1 md:py-2 md:px-3 rounded-[7px] bg-blue-600 text-white transition-transform duration-100 active:scale-95">
+        search
+      </button>
+    </form>
+  </div>
+  
+  
   <section class="w-full mt-4 pb-4">
     <h4 class="text-left text-xl whitespace-nowrap ml-2 mb-6 font-bold whitespace-pre-wrap">Search Results for: “{decodeURIComponent(data.query)}”</h4>
     <div class="grid md:gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full">

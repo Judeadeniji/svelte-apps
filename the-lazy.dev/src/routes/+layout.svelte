@@ -1,8 +1,8 @@
 <script>
   import { navigating } from "$app/stores"
   import Loader from "./page-skeleton.svelte"
-  import "@fontsource/open-sans/latin.css";
-  import "@fontsource/roboto/latin.css";
+  import "@fontsource/open-sans";
+  import "@fontsource/roboto";
   import '../global.css';
   import Header from "$lib/components/header.svelte";
   import Footer from "$lib/components/footer.svelte";
@@ -34,10 +34,8 @@
 <main class="relative h-full w-full max-w-screen-lg mx-auto" id="main">
   <div class="border-b flex items-center justify-between text-gray-600 text-md px-2 py-1">
     
-    <a name="My Portfolio" href="https://judeadeniji.github.io/">
-      <h1 class="font-semibold">
+    <a class="font-semibold block" name="My Portfolio" href="https://judeadeniji.github.io/">
         TheLazy.Dev
-      </h1>
     </a>
     
     <div class="flex items-center gap-x-3 text-sm font-sans font-medium">

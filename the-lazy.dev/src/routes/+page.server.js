@@ -27,7 +27,7 @@ async function getMyArticles() {
     });
     return await request.json();
   } catch (e) {
-    return [];
+    throw e;
   }
 }
 
@@ -40,6 +40,6 @@ async function getLatestArticles() {
     });
     return await request.json();
   } catch (e) {
-    return [];
+    throw e;
   }
 }

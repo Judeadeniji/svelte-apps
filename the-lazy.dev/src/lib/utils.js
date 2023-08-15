@@ -14,7 +14,14 @@ http.addInterceptor(addCacheControl);
 
 const df = new DateFilter();
 
+function onTimeout(handler, timeout) {
+  const id = setTimeout(handler, timeout || 10);
+  
+  return () => clearTimeout(id);
+}
+
 export {
   http,
-  df
+  df,
+  onTimeout
 };
