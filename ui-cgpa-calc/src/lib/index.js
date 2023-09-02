@@ -81,13 +81,5 @@ export function calculateCGPA(resObj) {
 }
 
 export function userResult() {
-  return writable({
-  "MAT 111": 63,
-  "MAT 121": 69,
-  "CSC 101": 64,
-  "PHY 102": 87,
-  "PHY 103": 57,
-  "SYA 114": 42,
-  "GES 107": 73,
-});
+  return writable({});
 }

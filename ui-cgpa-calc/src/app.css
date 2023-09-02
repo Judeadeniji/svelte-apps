@@ -17,5 +17,5 @@ html {
 
 @font-face {
   font-family: Cal;
-  src: url('../static/fonts/cal/fonts/otf/CalSans-SemiBold.otf') format("opentype");
+  src: url('/fonts/cal/fonts/otf/CalSans-SemiBold.otf') format("opentype");
 }
