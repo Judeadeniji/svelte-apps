@@ -40,16 +40,21 @@ export const UNITS = {
   "STA 121": 3,
   "STA 211": 3,
   "STA 221": 3,
-  "SYA 114": 3,
+  "STA 114": 3,
   "GES 201": 3,
   "CSC 293": 3,
-  "CSC 233": 3, //stopped here
+  "CSC 233": 3,
+  "BOT 111": 3,//stopped here
   "GES 102": 2,
   "GES 103": 2,
+  "CHE 191": 2,
   "CHE 192": 2,
   "STA 131": 2,
   "GES 107": 2,
   "MAT 299": 2,
+  "ZOO 114": 2,
+  "ZOO 116": 2,
+  "ZOO 118": 2,
 };
 
 
