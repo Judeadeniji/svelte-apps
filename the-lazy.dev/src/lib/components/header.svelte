@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte"
-  import { fade, fly } from "svelte/transition"
+  import { fade } from "svelte/transition"
   import SearchIcon from "../svg/search.svelte"
   import Search from "./search.svelte"
 
