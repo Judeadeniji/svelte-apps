@@ -60,9 +60,9 @@ export const UNITS = {
 
 export function getGradeValue(score) {
   if (score >= 70) return { alias: "A", value: 4 };
-  if (score > 60 && score <= 69) return { alias: "B", value: 3 };
-  if (score > 50 && score <= 59) return { alias: "C", value: 2 };
-  if (score > 45 && score <= 49) return { alias: "D", value: 1 };
+  if (score >= 60 && score <= 69) return { alias: "B", value: 3 };
+  if (score >= 50 && score <= 59) return { alias: "C", value: 2 };
+  if (score >= 45 && score <= 49) return { alias: "D", value: 1 };
   if (score <= 45) return { alias: "F", value: 0 };
 }
 
