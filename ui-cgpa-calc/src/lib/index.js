@@ -3,6 +3,7 @@ import { writable } from "svelte/store";
 
 // incomplete
 export const UNITS = {
+  "MAT 101": 4,
   "MAT 111": 4,
   "MAT 121": 4,
   "MAT 141": 4,
@@ -51,6 +52,8 @@ export const UNITS = {
   "CHE 192": 2,
   "STA 131": 2,
   "GES 107": 2,
+  "GES 108": 2,
+  "GES 101": 2,
   "MAT 299": 2,
   "ZOO 114": 2,
   "ZOO 116": 2,
