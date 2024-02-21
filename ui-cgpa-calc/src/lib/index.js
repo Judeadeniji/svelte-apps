@@ -1,6 +1,5 @@
 import { writable } from "svelte/store";
 
-
 // incomplete
 export const UNITS = {
   "MAT 101": 4,
@@ -45,7 +44,7 @@ export const UNITS = {
   "GES 201": 3,
   "CSC 293": 3,
   "CSC 233": 3,
-  "BOT 111": 3,//stopped here
+  "BOT 111": 3, //stopped here
   "GES 102": 2,
   "GES 103": 2,
   "CHE 191": 2,
@@ -60,6 +59,23 @@ export const UNITS = {
   "ZOO 118": 2,
 };
 
+export function UNITS_STORE() {
+  const store = writable(UNITS);
+
+  function update(value) {
+    const { code, unit } = value;
+    UNITS[code] = unit;
+    store.update((r) => (r[code] = unit));
+  }
+
+  return {
+    get value() {
+      return UNITS;
+    },
+    update,
+    subscribe: store.subscribe,
+  };
+}
 
 export function getGradeValue(score) {
   if (score >= 70) return { alias: "A", value: 4 };
@@ -80,10 +96,10 @@ export function calculateCGPA(resObj) {
     const gradeValue = unit * getGradeValue(score).value;
     totalGrade += gradeValue;
   });
-  
+
   const cgpa = (totalGrade / totalUnits).toFixed(2);
-  
-  if (isNaN(cgpa)) return 0.00;
+
+  if (isNaN(cgpa)) return 0.0;
 
   return cgpa;
 }
