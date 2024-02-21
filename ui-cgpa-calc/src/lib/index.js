@@ -64,8 +64,11 @@ export function UNITS_STORE() {
 
   function update(value) {
     const { code, unit } = value;
-    UNITS[code] = unit;
-    store.update((r) => (r[code] = unit));
+    UNITS[code] = Number(unit);
+    store.update((r) => ({
+      ...r,
+      [code]: Number(unit),
+    }));
   }
 
   return {
@@ -86,12 +89,13 @@ export function getGradeValue(score) {
 }
 
 export function calculateCGPA(resObj) {
+  const u = UNITS_STORE();
   const resArr = Object.entries(resObj);
   let totalUnits = 0;
   let totalGrade = 0;
 
   resArr.forEach(([course, score]) => {
-    const unit = UNITS[course];
+    const unit = u.value[course];
     totalUnits += unit;
     const gradeValue = unit * getGradeValue(score).value;
     totalGrade += gradeValue;
